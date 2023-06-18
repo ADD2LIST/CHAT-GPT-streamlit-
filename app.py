@@ -2,7 +2,7 @@ import streamlit as st
 import openai
 
 # Set your OpenAI API key
-openai.api_key = 'YOUR_API_KEY'
+openai.api_key = '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'
 messages = [{"role": "system", "content": "You are an intelligent assistant."}]
 
 st.title("ChatGPT with Streamlit")
