@@ -1,22 +1,18 @@
 import streamlit as st
-import openai
 
-# Set your OpenAI API key
-openai.api_key = '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'
-messages = [{"role": "system", "content": "You are an intelligent assistant."}]
+st.title("m3u8 Link Player")
 
-st.title("ChatGPT with Streamlit")
+# Input field for m3u8 link
+m3u8_link = st.text_input("Enter m3u8 link:")
 
-# Input field for user message
-user_input = st.text_input("User:")
+# Input field for m3u8 playlist link
+playlist_link = st.text_input("Enter m3u8 playlist link:")
 
-if user_input:
-    messages.append({"role": "user", "content": user_input})
-    chat = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
-        messages=messages
-    )
-    reply = chat.choices[0].message.content
-    st.text(f"ChatGPT: {reply}")
-    messages.append({"role": "assistant", "content": reply})
+# Validate and display the video player for m3u8 link
+if m3u8_link:
+    st.video(m3u8_link)
 
+# Validate and display the video player for m3u8 playlist link
+if playlist_link:
+    st.video(playlist_link)
+    
